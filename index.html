@@ -74,19 +74,21 @@
     }
 
     h3 {
-      font-size: 2em;
+      font-size: 2.5em;
       color: #ff4500;
       text-align: center;
       margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
+    /* Стилізація карток персонажів */
     .characters {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, auto));
       gap: 25px;
-      justify-content: center; /* центрує залишок */
+      justify-content: center;
     }
-
 
     .card {
       background-color: #2a2a2a;
@@ -94,6 +96,7 @@
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       transition: transform 0.3s;
+      text-align: center;
     }
 
     .card:hover {
@@ -107,21 +110,79 @@
     }
 
     .card h4 {
-      margin: 15px 0 10px;
+      margin: 15px 0 5px;
       color: #ff6347;
+      font-size: 1.4em;
     }
 
     .card p {
-      padding: 0 10px 20px;
+      padding: 0 15px 20px;
       font-size: 0.95em;
+      color: #ddd;
     }
 
+    /* СТИЛІ ТАБЛИЦІ ЗБРОЇ (TF2 WIKI STYLE) */
+    .weapon-table-container {
+      overflow-x: auto;
+    }
+
+    .weapon-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #2a2a2a;
+      border: 3px solid #3c352e;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .weapon-table th {
+      background-color: #3c352e;
+      color: #f5f5f5;
+      padding: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      border: 1px solid #1c1c1c;
+    }
+
+    .weapon-table td {
+      padding: 15px;
+      border: 1px solid #1c1c1c;
+      vertical-align: middle;
+    }
+
+    .weapon-table tr:nth-child(even) {
+      background-color: #333333;
+    }
+
+    .weapon-img {
+      width: 140px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 8px rgba(0,0,0,0.6));
+    }
+
+    .weapon-name {
+      color: #FFD700; /* Якість Unique (жовтий) */
+      font-weight: bold;
+      font-size: 1.1em;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .weapon-type {
+      font-size: 0.8em;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* Футер */
     footer {
       text-align: center;
-      padding: 25px;
+      padding: 30px;
       background-color: #111;
       color: #ccc;
-      border-top: 2px solid #ff4500;
+      border-top: 3px solid #ff4500;
       font-size: 0.9em;
     }
 
@@ -129,23 +190,6 @@
       color: #ff4500;
       text-decoration: none;
     }
-
-    table,th,td{
-      border-collapse: collapse;
-      border: 7px solid rgb(250, 167, 0);
-      text-align:center;
-    } 
-
-    th,td{
-      padding:20px;
-    }
-
-    td img{
-      width: 175px;
-      height: auto;
-      
-    }
-
   </style>
 </head>
 <body>
@@ -158,8 +202,9 @@
   <nav>
     <a href="#about">Про гру</a>
     <a href="#heroes">Персонажі</a>
+    <a href="#weapons">Зброя</a>
     <a href="#contact">Контакти</a>
-    <a href="https://store.steampowered.com/app/440/Team_Fortress_2/">Крамниця Steam</a>
+    <a href="https://store.steampowered.com/app/440/Team_Fortress_2/" target="_blank">Steam</a>
   </nav>
 
   <section class="hero">
@@ -169,7 +214,7 @@
 
   <section id="about">
     <h3>Про гру</h3>
-    <p>Team Fortress 2 — це командний шутер від першої особи, створений компанією Valve. Гравці обирають одного з дев’яти унікальних класів персонажів, кожен із яких має власні здібності, зброю та стиль гри. Гра вийшла у 2007 році, але досі залишається популярною завдяки своїй оригінальності, балансованості та гумору.</p>
+    <p style="line-height: 1.6; text-align: center;">Team Fortress 2 — це командний шутер від першої особи, створений компанією Valve. Гравці обирають одного з дев’яти унікальних класів персонажів, кожен із яких має власні здібності, зброю та стиль гри. Гра вийшла у 2007 році, але досі залишається популярною завдяки своїй оригінальності, балансованості та гумору.</p>
   </section>
 
   <section id="heroes">
@@ -180,107 +225,96 @@
         <h4>Scout</h4>
         <p>Швидкий і спритний. Бігає швидше за всіх і володіє дробовиком. Ідеальний для розвідки.</p>
       </div>
-
       <div class="card">
         <img src="https://files.vgtimes.ru/si/post_66354_1x1_ru.webp" alt="Soldier">
         <h4>Soldier</h4>
         <p>Класичний боєць із ракетною установкою. Потужна зброя й можливість ракетного стрибка.</p>
       </div>
-
       <div class="card">
         <img src="https://wiki.teamfortress.com/w/images/f/f5/Icon_medic.jpg" alt="Medic">
         <h4>Medic</h4>
         <p>Лікар команди. Лікує союзників і може активувати “ÜberCharge” для невразливості.</p>
       </div>
-
       <div class="card">
         <img src="https://wiki.teamfortress.com/w/images/3/37/Spyava.jpg" alt="Spy">
         <h4>Spy</h4>
         <p>Майстер шпигунства. Може ставати невидимим і перевтілюватися у ворогів.</p>
       </div>
-
       <div class="card">
         <img src="https://cdn.displate.com/artwork/560x784/2023-03-15/7e5e5e7c1b532bbd2fd785562e81178a_d1aabd37c123a10b1ccbccaafb06e575.jpg" alt="Pyro">
         <h4>Pyro</h4>
-        <p>Таємничий і небезпечний. Любить палити все навколо своїм вогнеметом. Живе у власному "веселому" світі.</p>
+        <p>Таємничий і небезпечний. Любить палити все навколо своїм вогнеметом.</p>
       </div>
-
-      <div class="card">
-        <img src="https://images.steamusercontent.com/ugc/579014848721121579/18FFA8C2BB0FF04E78773141B8559B9981E4E3D9/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Demoman">
-        <h4>Demoman</h4>
-        <p>Майстер вибухів зі Шотландії. Використовує гранати й міни, щоб знищувати ворогів і оборону.</p>
-      </div>
-
       <div class="card">
         <img src="https://i.pinimg.com/736x/e2/8f/b8/e28fb85d134aef3946597b60d9b281e2.jpg" alt="Heavy">
         <h4>Heavy</h4>
-        <p>Найміцніший боєць команди. Має величезний кулемет “Саша” і любить сендвічі. Сила і спокій в одній особі.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://cdn.costumewall.com/wp-content/uploads/2019/06/tf2-engineer.webp" alt="Engineer">
-        <h4>Engineer</h4>
-        <p>Розумний винахідник із Техасу. Будує турелі, телепорти та медстанції. Любить ефективність і порядок.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://cdn.displate.com/artwork/560x784/2023-03-15/16b10ce0992b84677607920363f87e36_7c53af9d4cda734e553aec7e576732da.jpg" alt="Sniper">
-        <h4>Sniper</h4>
-        <p>Холоднокровний стрілець. Вбиває ворогів із великої відстані. Самотній, точний і стриманий.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://wiki.teamfortress.com/w/images/thumb/4/46/Administrator.png/300px-Administrator.png" alt="The Administrator">
-        <h4>The Administrator</h4>
-        <p>Головна керівниця битв між RED і BLU. Владна, розумна й безжальна. Її голос звучить на початку кожного раунду.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://pm1.aminoapps.com/6614/5a7353d91d26a31d7ca0d0e12d6e115905b3f807_00.jpg" alt="Miss Pauling">
-        <h4>Miss Pauling</h4>
-        <p>Асистентка Адміністраторки. Організована, уважна і трохи нервова. Виконує всю "брудну роботу" і має симпатію до Скаута.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://static.wikia.nocookie.net/tfcomics/images/b/b7/Saxton.PNG/revision/latest?cb=20140713034058" alt="Saxton Hale">
-        <h4>Saxton Hale</h4>
-        <p>Безстрашний власник Mann Co. Надзвичайно сильний, завжди б’ється голими руками. Втілення мужності та австралійської дикості.</p>
+        <p>Найміцніший боєць команди. Має величезний кулемет “Саша” і любить сендвічі.</p>
       </div>
     </div>
   </section>
 
-   <section id="about">
-    <h3>Зброя</h3>
-
-   <table>
-
-    <tr>
-      <th>tygygy</th>
-      <th>tygygy</th>
-      <th>tygygy</th>
-      <th>tygygy</th>
-    </tr>
-
-    <tr>
-      <td><img src="https://wiki.teamfortress.com/w/images/7/74/Backpack_Grenade_Launcher.png" alt="гранотомет"></td>
-      <td>ikolo</td>
-      <td>kklk,l</td>
-      <td>,,kl</td>
-    </tr>
-
-   </table>
-
+  <section id="weapons">
+    <h3>Арсенал Зброї</h3>
+    <div class="weapon-table-container">
+      <table class="weapon-table">
+        <thead>
+          <tr>
+            <th>Клас / Слот</th>
+            <th>Зображення</th>
+            <th>Назва та опис</th>
+            <th>Тип шкоди</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center;"><strong>Soldier</strong><br><span class="weapon-type">Основна</span></td>
+            <td><img src="https://wiki.teamfortress.com/w/images/thumb/1/11/Backpack_Rocket_Launcher.png/150px-Backpack_Rocket_Launcher.png" class="weapon-img" alt="Rocket Launcher"></td>
+            <td>
+              <span class="weapon-name">Ракетомет</span>
+              Завдає великої шкоди по площі. Дозволяє виконувати "ракетні стрибки" для мобільності.
+            </td>
+            <td style="text-align: center;">Вибухова</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"><strong>Demoman</strong><br><span class="weapon-type">Основна</span></td>
+            <td><img src="https://wiki.teamfortress.com/w/images/thumb/7/74/Backpack_Grenade_Launcher.png/150px-Backpack_Grenade_Launcher.png" class="weapon-img" alt="Grenade Launcher"></td>
+            <td>
+              <span class="weapon-name">Гранатомет</span>
+              Стріляє гранатами по дузі. Пряме влучання завдає максимальної шкоди.
+            </td>
+            <td style="text-align: center;">Вибухова</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"><strong>Medic</strong><br><span class="weapon-type">Допоміжна</span></td>
+            <td><img src="https://wiki.teamfortress.com/w/images/thumb/3/30/Backpack_Medi_Gun.png/150px-Backpack_Medi_Gun.png" class="weapon-img" alt="Medi Gun"></td>
+            <td>
+              <span class="weapon-name">Лікувальна гармата</span>
+              Відновлює здоров'я союзників. Накопичує ÜberCharge для тимчасової невразливості.
+            </td>
+            <td style="text-align: center;">Лікування</td>
+          </tr>
+          <tr>
+            <td style="text-align: center;"><strong>Heavy</strong><br><span class="weapon-type">Ближній бій</span></td>
+            <td><img src="https://wiki.teamfortress.com/w/images/thumb/4/4d/Backpack_Fists.png/150px-Backpack_Fists.png" class="weapon-img" alt="Fists"></td>
+            <td>
+              <span class="weapon-name">Кулаки</span>
+              Коли набої закінчуються, Хеві використовує свою неймовірну фізичну силу.
+            </td>
+            <td style="text-align: center;">Контактна</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
-    
   <section id="contact">
     <h3>Контакти</h3>
     <p style="text-align:center;">Хочеш приєднатися до фан-спільноти? Пиши нам:</p>
-    <p style="text-align:center;"><a href="mailto:tf2fansite@gmail.com">tf2fansite@gmail.com</a></p>
+    <p style="text-align:center; font-weight: bold;"><a href="mailto:tf2fansite@gmail.com">tf2fansite@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Team Fortress 2 Fan Page | Неофіційний фан-сайт. Гра належить Valve Corporation.</p>
+    <p>© 2025 Team Fortress 2 Fan Page | Неофіційний фан-сайт. Усі права на гру належать <a href="https://www.valvesoftware.com/" target="_blank">Valve Corporation</a>.</p>
   </footer>
 
 </body>
