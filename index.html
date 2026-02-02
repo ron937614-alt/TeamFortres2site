@@ -43,244 +43,190 @@
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: #ff4500;
-    }
+    nav a:hover { color: #ff4500; }
 
     .hero {
       background: url("https://cdn.cloudflare.steamstatic.com/apps/tf2/blog/images/meet_the_team.jpg") center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 100px 20px;
+      padding: 80px 20px;
       background-blend-mode: multiply;
       background-color: rgba(0,0,0,0.6);
     }
 
-    .hero h2 {
-      font-size: 3em;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      max-width: 700px;
-      margin: auto;
-    }
-
     section {
       max-width: 1100px;
-      margin: 50px auto;
+      margin: 40px auto;
       padding: 0 20px;
     }
 
     h3 {
-      font-size: 2em;
+      font-size: 2.2em;
       color: #ff4500;
       text-align: center;
       margin-bottom: 30px;
+      text-transform: uppercase;
     }
 
     .characters {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-      gap: 25px;
-      justify-content: center; /* центрує залишок */
+      gap: 20px;
+      justify-content: center;
     }
-
 
     .card {
       background-color: #2a2a2a;
-      border-radius: 15px;
+      border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
+      transition: 0.3s;
+      text-align: center;
     }
 
-    .card:hover {
-      transform: scale(1.05);
-    }
+    .card:hover { transform: scale(1.03); }
 
     .card img {
       width: 100%;
-      height: 220px;
+      height: 200px;
       object-fit: cover;
     }
 
-    .card h4 {
-      margin: 15px 0 10px;
-      color: #ff6347;
+    .card h4 { margin: 10px 0; color: #ff6347; }
+    .card p { padding: 0 10px 15px; font-size: 0.9em; color: #ccc; }
+
+    /* Wiki Style Table */
+    .weapon-table-container { overflow-x: auto; margin-top: 20px; }
+    .weapon-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #2a2a2a;
+      border: 2px solid #3c352e;
     }
 
-    .card p {
-      padding: 0 10px 20px;
-      font-size: 0.95em;
+    .weapon-table th {
+      background-color: #3c352e;
+      color: #eee;
+      padding: 12px;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      border: 1px solid #1c1c1c;
     }
+
+    .weapon-table td {
+      padding: 10px;
+      border: 1px solid #1c1c1c;
+      font-size: 0.9em;
+    }
+
+    .slot-header {
+      background-color: #4a443f !important;
+      color: #ffb84d;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .weapon-img {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+    }
+
+    .weapon-name { color: #FFD700; font-weight: bold; display: block; margin-bottom: 3px; }
+    .class-tag { font-weight: bold; color: #ff6347; }
 
     footer {
       text-align: center;
       padding: 25px;
       background-color: #111;
-      color: #ccc;
       border-top: 2px solid #ff4500;
-      font-size: 0.9em;
+      font-size: 0.85em;
     }
-
-    footer a {
-      color: #ff4500;
-      text-decoration: none;
-    }
-
-    table,th,td{
-      border-collapse: collapse;
-      border: 7px solid rgb(250, 167, 0);
-      text-align:center;
-    } 
-
-    th,td{
-      padding:20px;
-    }
-
-    td img{
-      width: 175px;
-      height: auto;
-      
-    }
-
   </style>
 </head>
 <body>
 
   <header>
     <h1>Team Fortress 2</h1>
-    <p>Фанатський сайт, присвячений легендарній грі від Valve</p>
+    <p>Повний арсенал та герої</p>
   </header>
 
   <nav>
-    <a href="#about">Про гру</a>
     <a href="#heroes">Персонажі</a>
-    <a href="#contact">Контакти</a>
-    <a href="https://store.steampowered.com/app/440/Team_Fortress_2/">Крамниця Steam</a>
+    <a href="#weapons">Арсенал</a>
+    <a href="https://store.steampowered.com/app/440/Team_Fortress_2/">Steam</a>
   </nav>
-
-  <section class="hero">
-    <h2>Ласкаво просимо до світу Team Fortress 2!</h2>
-    <p>Обери свого героя, створюй команду та вступай у запеклі битви за перемогу! Класичний гумор, динамічний геймплей і неповторна атмосфера роблять TF2 унікальною грою.</p>
-  </section>
-
-  <section id="about">
-    <h3>Про гру</h3>
-    <p>Team Fortress 2 — це командний шутер від першої особи, створений компанією Valve. Гравці обирають одного з дев’яти унікальних класів персонажів, кожен із яких має власні здібності, зброю та стиль гри. Гра вийшла у 2007 році, але досі залишається популярною завдяки своїй оригінальності, балансованості та гумору.</p>
-  </section>
 
   <section id="heroes">
     <h3>Персонажі</h3>
     <div class="characters">
-      <div class="card">
-        <img src="https://i.playground.ru/p/N8ja5Zb06dXFcXJ-IWW-_g.jpeg.webp" alt="Scout">
-        <h4>Scout</h4>
-        <p>Швидкий і спритний. Бігає швидше за всіх і володіє дробовиком. Ідеальний для розвідки.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://files.vgtimes.ru/si/post_66354_1x1_ru.webp" alt="Soldier">
-        <h4>Soldier</h4>
-        <p>Класичний боєць із ракетною установкою. Потужна зброя й можливість ракетного стрибка.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://wiki.teamfortress.com/w/images/f/f5/Icon_medic.jpg" alt="Medic">
-        <h4>Medic</h4>
-        <p>Лікар команди. Лікує союзників і може активувати “ÜberCharge” для невразливості.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://wiki.teamfortress.com/w/images/3/37/Spyava.jpg" alt="Spy">
-        <h4>Spy</h4>
-        <p>Майстер шпигунства. Може ставати невидимим і перевтілюватися у ворогів.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://cdn.displate.com/artwork/560x784/2023-03-15/7e5e5e7c1b532bbd2fd785562e81178a_d1aabd37c123a10b1ccbccaafb06e575.jpg" alt="Pyro">
-        <h4>Pyro</h4>
-        <p>Таємничий і небезпечний. Любить палити все навколо своїм вогнеметом. Живе у власному "веселому" світі.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.steamusercontent.com/ugc/579014848721121579/18FFA8C2BB0FF04E78773141B8559B9981E4E3D9/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" alt="Demoman">
-        <h4>Demoman</h4>
-        <p>Майстер вибухів зі Шотландії. Використовує гранати й міни, щоб знищувати ворогів і оборону.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://i.pinimg.com/736x/e2/8f/b8/e28fb85d134aef3946597b60d9b281e2.jpg" alt="Heavy">
-        <h4>Heavy</h4>
-        <p>Найміцніший боєць команди. Має величезний кулемет “Саша” і любить сендвічі. Сила і спокій в одній особі.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://cdn.costumewall.com/wp-content/uploads/2019/06/tf2-engineer.webp" alt="Engineer">
-        <h4>Engineer</h4>
-        <p>Розумний винахідник із Техасу. Будує турелі, телепорти та медстанції. Любить ефективність і порядок.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://cdn.displate.com/artwork/560x784/2023-03-15/16b10ce0992b84677607920363f87e36_7c53af9d4cda734e553aec7e576732da.jpg" alt="Sniper">
-        <h4>Sniper</h4>
-        <p>Холоднокровний стрілець. Вбиває ворогів із великої відстані. Самотній, точний і стриманий.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://wiki.teamfortress.com/w/images/thumb/4/46/Administrator.png/300px-Administrator.png" alt="The Administrator">
-        <h4>The Administrator</h4>
-        <p>Головна керівниця битв між RED і BLU. Владна, розумна й безжальна. Її голос звучить на початку кожного раунду.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://pm1.aminoapps.com/6614/5a7353d91d26a31d7ca0d0e12d6e115905b3f807_00.jpg" alt="Miss Pauling">
-        <h4>Miss Pauling</h4>
-        <p>Асистентка Адміністраторки. Організована, уважна і трохи нервова. Виконує всю "брудну роботу" і має симпатію до Скаута.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://static.wikia.nocookie.net/tfcomics/images/b/b7/Saxton.PNG/revision/latest?cb=20140713034058" alt="Saxton Hale">
-        <h4>Saxton Hale</h4>
-        <p>Безстрашний власник Mann Co. Надзвичайно сильний, завжди б’ється голими руками. Втілення мужності та австралійської дикості.</p>
-      </div>
+      <div class="card"><img src="https://i.playground.ru/p/N8ja5Zb06dXFcXJ-IWW-_g.jpeg.webp" alt="Scout"><h4>Scout</h4><p>Швидкий розвідник.</p></div>
+      <div class="card"><img src="https://files.vgtimes.ru/si/post_66354_1x1_ru.webp" alt="Soldier"><h4>Soldier</h4><p>Ударна сила з ракетами.</p></div>
+      <div class="card"><img src="https://cdn.displate.com/artwork/560x784/2023-03-15/7e5e5e7c1b532bbd2fd785562e81178a_d1aabd37c123a10b1ccbccaafb06e575.jpg" alt="Pyro"><h4>Pyro</h4><p>Майстер вогню.</p></div>
+      <div class="card"><img src="https://images.steamusercontent.com/ugc/579014848721121579/18FFA8C2BB0FF04E78773141B8559B9981E4E3D9/" alt="Demoman"><h4>Demoman</h4><p>Експерт з вибухівки.</p></div>
+      <div class="card"><img src="https://i.pinimg.com/736x/e2/8f/b8/e28fb85d134aef3946597b60d9b281e2.jpg" alt="Heavy"><h4>Heavy</h4><p>Незламний кулеметник.</p></div>
+      <div class="card"><img src="https://cdn.costumewall.com/wp-content/uploads/2019/06/tf2-engineer.webp" alt="Engineer"><h4>Engineer</h4><p>Геній інженерії.</p></div>
+      <div class="card"><img src="https://wiki.teamfortress.com/w/images/f/f5/Icon_medic.jpg" alt="Medic"><h4>Medic</h4><p>Головний лікар.</p></div>
+      <div class="card"><img src="https://cdn.displate.com/artwork/560x784/2023-03-15/16b10ce0992b84677607920363f87e36_7c53af9d4cda734e553aec7e576732da.jpg" alt="Sniper"><h4>Sniper</h4><p>Влучний стрілець.</p></div>
+      <div class="card"><img src="https://wiki.teamfortress.com/w/images/3/37/Spyava.jpg" alt="Spy"><h4>Spy</h4><p>Прихований вбивця.</p></div>
+      <div class="card"><img src="https://images.steamusercontent.com/ugc/915792898564365703/D1658E20202A04A14FF803BBDEA32761FC242D3A/?imw=128&imh=128&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Admin"><h4>Адміністраторка</h4><p>Керівниця TF Industries.</p></div>
+      <div class="card"><img src="https://static.wikia.nocookie.net/teamfortress/images/6/6c/Miss_Pauling_in_Expiration_Date.png/revision/latest?cb=20140812200216" alt="Pauling"><h4>Miss Pauling</h4><p>Вірна помічниця.</p></div>
+      <div class="card"><img src="https://images.steamusercontent.com/ugc/1493460741921775625/57F30B19112096C35ADC5588E1C818EC5C35719B/?imw=128&imh=128&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Saxton"><h4>Saxton Hale</h4><p>Власник Mann Co.</p></div>
     </div>
   </section>
 
-   <section id="about">
-    <h3>Зброя</h3>
+  <section id="weapons">
+    <h3>Арсенал Зброї</h3>
+    <div class="weapon-table-container">
+      <table class="weapon-table">
+        <thead>
+          <tr>
+            <th>Клас</th>
+            <th>Фото</th>
+            <th>Назва та опис</th>
+            <th>Тип</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="4" class="slot-header">I. ОСНОВНА ЗБРОЯ (PRIMARY)</td></tr>
+          <tr><td><span class="class-tag">Scout</span></td><td><img src="https://tradeit.gg/blog/wp-content/uploads/2022/06/back-scatter-tf2-tradeit.png" class="weapon-img"></td><td><span class="weapon-name">Scattergun</span> Потужний обріз для близьких дистанцій.</td><td>Дробовик</td></tr>
+          <tr><td><span class="class-tag">Soldier</span></td><td><img src="https://steam-trader.com/upload/items/400/48/48f40fcaedd8b53f1bd195d2e180ed72.png" class="weapon-img"></td><td><span class="weapon-name">Rocket Launcher</span> Ракетна установка для стрибків та вибухів.</td><td>Ракети</td></tr>
+          <tr><td><span class="class-tag">Pyro</span></td><td><img src="https://steam-trader.com/upload/items/400/4c/4c6a48ca4a81db73563ee9895891f33e.png" class="weapon-img"></td><td><span class="weapon-name">Flame Thrower</span> Спалює ворогів та відбиває снаряди.</td><td>Вогнемет</td></tr>
+          <tr><td><span class="class-tag">Demoman</span></td><td><img src="https://wiki.teamfortress.com/w/images/thumb/7/74/Backpack_Grenade_Launcher.png/150px-Backpack_Grenade_Launcher.png" class="weapon-img"></td><td><span class="weapon-name">Grenade Launcher</span> Вистрілює гранатами, що вибухають.</td><td>Гранати</td></tr>
+          <tr><td><span class="class-tag">Heavy</span></td><td><img src="https://steam-trader.com/upload/items/400/3e/3ef012cbab29d4b1e5a3ea9c38188973.png" class="weapon-img"></td><td><span class="weapon-name">Minigun</span> Руйнівний кулемет з великим темпом.</td><td>Кулемет</td></tr>
+          <tr><td><span class="class-tag">Engineer</span></td><td><img src="https://images.steamusercontent.com/ugc/947338758880971812/9545AED6AE27D543281008D292679AED775D7F3E/" class="weapon-img"></td><td><span class="weapon-name">Shotgun</span> Класична рушниця для самооборони.</td><td>Дробовик</td></tr>
+          <tr><td><span class="class-tag">Medic</span></td><td><img src="https://wiki.teamfortress.com/w/images/7/7f/BLU_Syringe_Gun.png" class="weapon-img"></td><td><span class="weapon-name">Syringe Gun</span> Вистрілює медичними шприцами.</td><td>Шприцестріл</td></tr>
+          <tr><td><span class="class-tag">Sniper</span></td><td><img src="https://community.fastly.steamstatic.com/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZULUrsm1j-9xgEcUxQfVAvnqipKjsTjMv6NGucF1Yln48ECjDQ5x1grYuaxMmJiJlDGWfUMDPdv8g3tDyYxvpJgVY7h9OJIOVK4tSW1UdY/330x192?allow_animated=1" class="weapon-img"></td><td><span class="weapon-name">Sniper Rifle</span> Точна гвинтівка для пострілів у голову.</td><td>Гвинтівка</td></tr>
+          <tr><td><span class="class-tag">Spy</span></td><td><img src="https://steam-trader.com/upload/items/400/9d/9d997f930656e705077346f4ceb73239.png" class="weapon-img"></td><td><span class="weapon-name">Revolver</span> Шестизарядний пістолет для вбивств здалеку.</td><td>Револьвер</td></tr>
 
-   <table>
+          <tr><td colspan="4" class="slot-header">II. ДРУГОРЯДНА ЗБРОЯ (SECONDARY)</td></tr>
+          <tr><td><span class="class-tag">Scout/Engi</span></td><td><img src="https://static.wikia.nocookie.net/tf2console/images/a/a2/Pistol.png/revision/latest?cb=20110120041343" class="weapon-img"></td><td><span class="weapon-name">Pistol</span> Компактна допоміжна зброя.</td><td>Пістолет</td></tr>
+          <tr><td><span class="class-tag">Soldier/Pyro</span></td><td><img src="https://images.steamusercontent.com/ugc/947338758880971812/9545AED6AE27D543281008D292679AED775D7F3E/" class="weapon-img"></td><td><span class="weapon-name">Shotgun</span> Запасний варіант для ближнього бою.</td><td>Дробовик</td></tr>
+          <tr><td><span class="class-tag">Demoman</span></td><td><img src="https://images.steamusercontent.com/ugc/797616865093232907/5C092D0B2AB23BEE62B6608FB8A362530663A3F2/" class="weapon-img"></td><td><span class="weapon-name">Stickybomb Launcher</span> Розставляє пастки з липучих мін.</td><td>Міни</td></tr>
+          <tr><td><span class="class-tag">Heavy</span></td><td><img src="https://wiki.teamfortress.com/w/images/0/0b/Store_Sandvich.png" class="weapon-img"></td><td><span class="weapon-name">Sandvich</span> Відновлює здоров'я при поїданні.</td><td>Їжа</td></tr>
+          <tr><td><span class="class-tag">Medic</span></td><td><img src="data:image/jpeg;base64,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" class="weapon-img"></td><td><span class="weapon-name">Medi Gun</span> Лікує союзників і дає ÜberCharge.</td><td>Промінь</td></tr>
+          <tr><td><span class="class-tag">Sniper</span></td><td><img src="https://wiki.teamfortress.com/w/images/d/d3/Standard_icon_SMG.png" class="weapon-img"></td><td><span class="weapon-name">SMG</span> Автомат для швидкого вогню.</td><td>ПП</td></tr>
 
-    <tr>
-      <th>tygygy</th>
-      <th>tygygy</th>
-      <th>tygygy</th>
-      <th>tygygy</th>
-    </tr>
-
-    <tr>
-      <td><img src="https://wiki.teamfortress.com/w/images/7/74/Backpack_Grenade_Launcher.png" alt="гранотомет"></td>
-      <td>ikolo</td>
-      <td>kklk,l</td>
-      <td>,,kl</td>
-    </tr>
-
-   </table>
-
-  </section>
-
-    
-  <section id="contact">
-    <h3>Контакти</h3>
-    <p style="text-align:center;">Хочеш приєднатися до фан-спільноти? Пиши нам:</p>
-    <p style="text-align:center;"><a href="mailto:tf2fansite@gmail.com">tf2fansite@gmail.com</a></p>
+          <tr><td colspan="4" class="slot-header">III. БЛИЖНІЙ БІЙ (MELEE)</td></tr>
+          <tr><td><span class="class-tag">Scout</span></td><td><img src="https://steam-trader.com/upload/items/400/c1/c11ba1a094e1359ed77a12a60cc4cc0c.png" class="weapon-img"></td><td><span class="weapon-name">Bat</span> Алюмінієва бита для швидких ударів.</td><td>Бита</td></tr>
+          <tr><td><span class="class-tag">Soldier</span></td><td><img src="https://steam-trader.com/upload/items/400/1b/1b6e4541faa67fff88d4a51fe67dfab5.png" class="weapon-img"></td><td><span class="weapon-name">Shovel</span> Саперна лопатка.</td><td>Лопата</td></tr>
+          <tr><td><span class="class-tag">Pyro</span></td><td><img src="https://wiki.teamfortress.com/w/images/e/ea/Backpack_Fire_Axe.png" class="weapon-img"></td><td><span class="weapon-name">Fire Axe</span> Сокира для гасіння ворогів.</td><td>Сокира</td></tr>
+          <tr><td><span class="class-tag">Demoman</span></td><td><img src="https://wiki.teamfortress.com/w/images/c/c9/Standard_icon_RED_Bottle.png" class="weapon-img"></td><td><span class="weapon-name">Bottle</span> Скляна пляшка віскі.</td><td>Ударна</td></tr>
+          <tr><td><span class="class-tag">Heavy</span></td><td><img src="https://steam-trader.com/upload/items/400/6f/6fd7740d4e9dfd5fbf98c60a8fbdf1bb.png" class="weapon-img"></td><td><span class="weapon-name">Fists</span> Величезні кулаки кулеметника.</td><td>Рукопашна</td></tr>
+          <tr><td><span class="class-tag">Engineer</span></td><td><img src="https://wiki.teamfortress.com/w/images/5/59/Standard_icon_Wrench.png" class="weapon-img"></td><td><span class="weapon-name">Wrench</span> Ремонтує та покращує будівлі.</td><td>Ключ</td></tr>
+          <tr><td><span class="class-tag">Medic</span></td><td><img src="https://steam-trader.com/upload/items/400/03/0328aab50500619482e5d1e85179c114.png" class="weapon-img"></td><td><span class="weapon-name">Bonesaw</span> Медична пилка для кісток.</td><td>Пилка</td></tr>
+          <tr><td><span class="class-tag">Sniper</span></td><td><img src="https://wiki.teamfortress.com/w/images/3/38/Standard_icon_Kukri.png" class="weapon-img"></td><td><span class="weapon-name">Kukri</span> Великий ніж для виживання.</td><td>Ніж</td></tr>
+          <tr><td><span class="class-tag">Spy</span></td><td><img src="https://wiki.tf2classic.com/w/images/1/12/Backpack_Knife.png" class="weapon-img"></td><td><span class="weapon-name">Knife</span> Миттєве вбивство ударом у спину.</td><td>Ніж</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Team Fortress 2 Fan Page | Неофіційний фан-сайт. Гра належить Valve Corporation.</p>
+    <p>© 2026 Team Fortress 2 Fan Project | Неофіційний ресурс</p>
   </footer>
 
 </body>
